@@ -1,0 +1,60 @@
+﻿@page
+@model Turrist_agent.Pages.Klientii.EditModel
+
+@{
+    ViewData["Title"] = "Изменить";
+}
+
+<h1>Изменить</h1>
+
+<h4>Клиенты</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Klienti.ID" />
+            <div class="form-group">
+                <label asp-for="Klienti.FIO" class="control-label"></label>
+                <input asp-for="Klienti.FIO" class="form-control" />
+                <span asp-validation-for="Klienti.FIO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Klienti.Data_rozhdeniya" class="control-label"></label>
+                <input asp-for="Klienti.Data_rozhdeniya" class="form-control" />
+                <span asp-validation-for="Klienti.Data_rozhdeniya" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Klienti.Pol" class="control-label"></label>
+                <input asp-for="Klienti.Pol" class="form-control" />
+                <span asp-validation-for="Klienti.Pol" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Klienti.adres" class="control-label"></label>
+                <input asp-for="Klienti.adres" class="form-control" />
+                <span asp-validation-for="Klienti.adres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Klienti.telefon" class="control-label"></label>
+                <input asp-for="Klienti.telefon" class="form-control" />
+                <span asp-validation-for="Klienti.telefon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Klienti.pass_dannie" class="control-label"></label>
+                <input asp-for="Klienti.pass_dannie" class="form-control" />
+                <span asp-validation-for="Klienti.pass_dannie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Назад к списку</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

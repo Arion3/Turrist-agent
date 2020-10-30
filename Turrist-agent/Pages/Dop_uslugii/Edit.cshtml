@@ -1,0 +1,45 @@
+﻿@page
+@model Turrist_agent.Pages.Dop_uslugii.EditModel
+
+@{
+    ViewData["Title"] = "Изменить";
+}
+
+<h1>Изменить</h1>
+
+<h4>Дополнительные услуги</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Dop_uslugi.ID" />
+            <div class="form-group">
+                <label asp-for="Dop_uslugi.Naimenovanie" class="control-label"></label>
+                <input asp-for="Dop_uslugi.Naimenovanie" class="form-control" />
+                <span asp-validation-for="Dop_uslugi.Naimenovanie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dop_uslugi.Cena" class="control-label"></label>
+                <input asp-for="Dop_uslugi.Cena" class="form-control" />
+                <span asp-validation-for="Dop_uslugi.Cena" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dop_uslugi.Opisanie" class="control-label"></label>
+                <input asp-for="Dop_uslugi.Opisanie" class="form-control" />
+                <span asp-validation-for="Dop_uslugi.Opisanie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Назад к списку</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

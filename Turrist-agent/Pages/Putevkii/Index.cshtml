@@ -1,0 +1,96 @@
+﻿@page
+@model Turrist_agent.Pages.Putevkii.IndexModel
+
+@{
+    ViewData["Title"] = "Путёвки";
+}
+
+<h1>Список путёвок</h1>
+
+<p>
+    <a asp-page="Create">Добавить новую путёвку</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Putevki[0].data_nachala)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Putevki[0].data_okonchaniya)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Putevki[0].prodolzhitelnost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Putevki[0].kod_vida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Putevki[0].kod_uslugi_1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Putevki[0].kod_uslugi_2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Putevki[0].kod_uslugi_3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Putevki[0].kod_klienta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Putevki[0].kod_sotrudnika)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Putevki[0].otmetka_o_broni)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Putevki[0].otmetka_o_oplate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Putevki) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.data_nachala)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.data_okonchaniya)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.prodolzhitelnost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kod_vida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kod_uslugi_1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kod_uslugi_2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kod_uslugi_3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kod_klienta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kod_sotrudnika)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.otmetka_o_broni)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.otmetka_o_oplate)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Подробнее</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

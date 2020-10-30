@@ -1,0 +1,48 @@
+﻿@page
+@model Turrist_agent.Pages.Dop_uslugii.IndexModel
+
+@{
+    ViewData["Title"] = "Дополнительные услуги";
+}
+
+<h1>Спиок доп услуг</h1>
+
+<p>
+    <a asp-page="Create">Добавить новую услугу</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Dop_uslugi[0].Naimenovanie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dop_uslugi[0].Cena)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dop_uslugi[0].Opisanie)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Dop_uslugi) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Naimenovanie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cena)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Opisanie)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Подробнее</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

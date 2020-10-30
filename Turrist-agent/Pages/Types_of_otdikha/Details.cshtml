@@ -1,0 +1,37 @@
+﻿@page
+@model Turrist_agent.Pages.Types_of_otdikha.DetailsModel
+
+@{
+    ViewData["Title"] = "Подробнее";
+}
+
+<h1>Подробнее</h1>
+
+<div>
+    <h4>Виды отдыха</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Types_of_otdizha.Naimenovanie)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Types_of_otdizha.Naimenovanie)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Types_of_otdizha.Ogranicheniya)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Types_of_otdizha.Ogranicheniya)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Types_of_otdizha.Opisanie)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Types_of_otdizha.Opisanie)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Types_of_otdizha.ID">Изменить</a> |
+    <a asp-page="./Index">Назад к списку</a>
+</div>

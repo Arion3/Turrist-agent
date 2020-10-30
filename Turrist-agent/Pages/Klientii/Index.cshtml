@@ -1,0 +1,66 @@
+﻿@page
+@model Turrist_agent.Pages.Klientii.IndexModel
+
+@{
+    ViewData["Title"] = "Клиенты";
+}
+
+<h1>Список клиентов</h1>
+
+<p>
+    <a asp-page="Create">Добавить нового клиента</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Klienti[0].FIO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Klienti[0].Data_rozhdeniya)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Klienti[0].Pol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Klienti[0].adres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Klienti[0].telefon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Klienti[0].pass_dannie)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Klienti) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FIO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data_rozhdeniya)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.adres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pass_dannie)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Подробнее</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

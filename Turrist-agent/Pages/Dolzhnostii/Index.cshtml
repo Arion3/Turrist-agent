@@ -1,0 +1,55 @@
+﻿@page
+@model Turrist_agent.Pages.Dolzhnostii.IndexModel
+
+@{
+    ViewData["Title"] = "Должности";
+}
+
+<h1>Список должностей</h1>
+
+<p>
+    <a asp-page="Create">Добавить новую должность</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Dolzhnosti[0].Trebovaniya)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dolzhnosti[0].Obyazannosti)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dolzhnosti[0].Oklad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dolzhnosti[0].Name_dolzhnosti)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Dolzhnosti) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Trebovaniya)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Obyazannosti)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Oklad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name_dolzhnosti)
+            </td>
+
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Подробнее</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,84 @@
+﻿@page
+@model Turrist_agent.Pages.Putevkii.CreateModel
+
+@{
+    ViewData["Title"] = "Создать";
+}
+
+<h1>Создать</h1>
+
+<h4>Путёвки</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Putevki.data_nachala" class="control-label"></label>
+                <input asp-for="Putevki.data_nachala" class="form-control" />
+                <span asp-validation-for="Putevki.data_nachala" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Putevki.data_okonchaniya" class="control-label"></label>
+                <input asp-for="Putevki.data_okonchaniya" class="form-control" />
+                <span asp-validation-for="Putevki.data_okonchaniya" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Putevki.prodolzhitelnost" class="control-label"></label>
+                <input asp-for="Putevki.prodolzhitelnost" class="form-control" />
+                <span asp-validation-for="Putevki.prodolzhitelnost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Putevki.kod_vida" class="control-label"></label>
+                <input asp-for="Putevki.kod_vida" class="form-control" />
+                <span asp-validation-for="Putevki.kod_vida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Putevki.kod_uslugi_1" class="control-label"></label>
+                <input asp-for="Putevki.kod_uslugi_1" class="form-control" />
+                <span asp-validation-for="Putevki.kod_uslugi_1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Putevki.kod_uslugi_2" class="control-label"></label>
+                <input asp-for="Putevki.kod_uslugi_2" class="form-control" />
+                <span asp-validation-for="Putevki.kod_uslugi_2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Putevki.kod_uslugi_3" class="control-label"></label>
+                <input asp-for="Putevki.kod_uslugi_3" class="form-control" />
+                <span asp-validation-for="Putevki.kod_uslugi_3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Putevki.kod_klienta" class="control-label"></label>
+                <input asp-for="Putevki.kod_klienta" class="form-control" />
+                <span asp-validation-for="Putevki.kod_klienta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Putevki.kod_sotrudnika" class="control-label"></label>
+                <input asp-for="Putevki.kod_sotrudnika" class="form-control" />
+                <span asp-validation-for="Putevki.kod_sotrudnika" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Putevki.otmetka_o_broni" class="control-label"></label>
+                <input asp-for="Putevki.otmetka_o_broni" class="form-control" />
+                <span asp-validation-for="Putevki.otmetka_o_broni" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Putevki.otmetka_o_oplate" class="control-label"></label>
+                <input asp-for="Putevki.otmetka_o_oplate" class="form-control" />
+                <span asp-validation-for="Putevki.otmetka_o_oplate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Добавить" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Назад к списку</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

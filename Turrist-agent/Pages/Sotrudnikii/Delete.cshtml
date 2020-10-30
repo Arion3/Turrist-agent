@@ -1,0 +1,64 @@
+﻿@page
+@model Turrist_agent.Pages.Sotrundikii.DeleteModel
+
+@{
+    ViewData["Title"] = "Удалить";
+}
+
+<h1>Удалить</h1>
+
+<h3>Вы уверены, что хотите удалить это?</h3>
+<div>
+    <h4>Сотрудники</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sotrudniki.FIO)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sotrudniki.FIO)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sotrudniki.Vozrast)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sotrudniki.Vozrast)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sotrudniki.Pol)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sotrudniki.Pol)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sotrudniki.Adres)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sotrudniki.Adres)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sotrudniki.Telefon)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sotrudniki.Telefon)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sotrudniki.Pass_dannie)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sotrudniki.Pass_dannie)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Sotrudniki.Kod_dolzhnosti)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sotrudniki.Kod_dolzhnosti)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Sotrudniki.ID" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Назад к списку</a>
+    </form>
+</div>

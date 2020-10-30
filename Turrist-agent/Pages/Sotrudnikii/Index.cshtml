@@ -1,0 +1,82 @@
+﻿@page
+@model Turrist_agent.Pages.Sotrundikii.IndexModel
+
+@{
+    ViewData["Title"] = "Сотрудники";
+}
+
+<h1>Список сотрудников</h1>
+
+<p>
+    <a asp-page="Create">Добавить нового сотрудника</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Sotrudniki[0].FIO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sotrudniki[0].Vozrast)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sotrudniki[0].Pol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sotrudniki[0].Adres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sotrudniki[0].Telefon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sotrudniki[0].Pass_dannie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sotrudniki[0].Dolzhnosti)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Sotrudniki) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FIO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vozrast)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pass_dannie)
+            </td>
+            <td>
+                @{ 
+                    try
+                    {
+                        @Model.Dolzhnosti.First(r => r.ID == item.Kod_dolzhnosti).Name_dolzhnosti
+                    }
+                    catch
+                    {
+                        <p>нет</p>
+
+                    }
+                }
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Подробнее</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

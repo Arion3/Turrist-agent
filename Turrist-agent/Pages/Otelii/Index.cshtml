@@ -1,0 +1,72 @@
+﻿@page
+@model Turrist_agent.Pages.Otelii.IndexModel
+
+@{
+    ViewData["Title"] = "Отели";
+}
+
+<h1>Список отелей</h1>
+
+<p>
+    <a asp-page="Create">Добавить отель</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Oteli[0].Naimenovanie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oteli[0].Strana)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oteli[0].gorod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oteli[0].adres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oteli[0].Telefon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oteli[0].Kolvo_zvezd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Oteli[0].kontact_Lico)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Oteli) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Naimenovanie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Strana)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gorod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.adres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kolvo_zvezd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kontact_Lico)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Подробнее</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

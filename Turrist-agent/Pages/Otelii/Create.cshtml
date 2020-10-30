@@ -1,0 +1,64 @@
+﻿@page
+@model Turrist_agent.Pages.Otelii.CreateModel
+
+@{
+    ViewData["Title"] = "Создать";
+}
+
+<h1>Создать</h1>
+
+<h4>Отели</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Oteli.Naimenovanie" class="control-label"></label>
+                <input asp-for="Oteli.Naimenovanie" class="form-control" />
+                <span asp-validation-for="Oteli.Naimenovanie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Oteli.Strana" class="control-label"></label>
+                <input asp-for="Oteli.Strana" class="form-control" />
+                <span asp-validation-for="Oteli.Strana" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Oteli.gorod" class="control-label"></label>
+                <input asp-for="Oteli.gorod" class="form-control" />
+                <span asp-validation-for="Oteli.gorod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Oteli.adres" class="control-label"></label>
+                <input asp-for="Oteli.adres" class="form-control" />
+                <span asp-validation-for="Oteli.adres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Oteli.Telefon" class="control-label"></label>
+                <input asp-for="Oteli.Telefon" class="form-control" />
+                <span asp-validation-for="Oteli.Telefon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Oteli.Kolvo_zvezd" class="control-label"></label>
+                <input asp-for="Oteli.Kolvo_zvezd" class="form-control" />
+                <span asp-validation-for="Oteli.Kolvo_zvezd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Oteli.kontact_Lico" class="control-label"></label>
+                <input asp-for="Oteli.kontact_Lico" class="form-control" />
+                <span asp-validation-for="Oteli.kontact_Lico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Добавить" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Назад к списку</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
